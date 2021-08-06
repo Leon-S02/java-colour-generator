@@ -9,15 +9,15 @@ import java.util.List;
 
 public class Colours {
 
-    public static List<Integer> getColour(){
+    public static List<Integer> getColour(){ // generates three random values to be used as RGB
        List<Integer> RGB = new ArrayList<>();
        for (int x = 0; x < 3; x++){
            RGB.add((int) (Math.random() * 255));
        }
-       return RGB;
+       return RGB; // returns an integer list of three values
     }
 
-    public static String[] getColourInfo(String RGB) throws IOException, InterruptedException { //change to getColourInfo and add hex code
+    public static String[] getColourInfo(String RGB) throws IOException, InterruptedException {
         String API_root = "https://www.thecolorapi.com/id?rgb=rgb";
         String ext = "("+RGB+")";
         String API_URL = API_root + ext;
@@ -43,6 +43,6 @@ public class Colours {
 
     public static void main(String[] args) {
         GUI gui = new GUI();
-        gui.initialiseGUI(0,0,0);
+        gui.initialiseGUI(0,0,0); // original colour is purely black
     }
 }
